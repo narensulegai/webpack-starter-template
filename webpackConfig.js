@@ -9,9 +9,13 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: `${__dirname}/dist`
   },
+  devServer: {
+    open: true
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      inject: false
     })
   ]
 };

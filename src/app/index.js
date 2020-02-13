@@ -1,2 +1,2 @@
-const sample = require('./sample.js');
-console.log(sample);
+const sample = require('./sample/index');
+console.log(sample, 'a');
