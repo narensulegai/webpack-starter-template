@@ -1,3 +1,17 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  entry: './index.js'
+  entry: {
+    app: './src/app/index.js',
+    vendor: './src/vendor/index.js'
+  },
+  output: {
+    filename: '[name].[contenthash].js',
+    path: `${__dirname}/dist`
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ]
 };
