@@ -6,10 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-
+    <script>
+      console.log('<% print(JSON.stringify(htmlWebpackPlugin)); %>');
+    </script>
+    <link rel="stylesheet" href='<%= htmlWebpackPlugin.files.chunks.app.css %>'>
 </head>
 <body>
-<img src="https://img.icons8.com/material/24/000000/info--v1.png">
+
+<div class="a"></div>
+<div class="app"></div>
 Welcome!
 <script src="<%= htmlWebpackPlugin.files.chunks.vendor.entry %>"></script>
 <script src="<%= htmlWebpackPlugin.files.chunks.app.entry %>"></script>
