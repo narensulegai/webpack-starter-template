@@ -7,7 +7,6 @@ function calcCredit(rating) {
   return credit;
 }
 
-
 module.exports = {
-  calcCredit
+  calcCredit,
 };

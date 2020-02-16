@@ -1,0 +1,19 @@
+module.exports = {
+  compilerOptions: {
+    target: 'esnext',
+    moduleResolution: 'node',
+    allowJs: true,
+    noEmit: true,
+    strict: true,
+    isolatedModules: true,
+    esModuleInterop: true,
+    baseUrl: '.',
+  },
+  include: [
+    'src/**/*',
+  ],
+  exclude: [
+    'node_modules',
+    '**/*.spec.ts',
+  ],
+};

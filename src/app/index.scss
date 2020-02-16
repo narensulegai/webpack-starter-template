@@ -4,6 +4,13 @@
   background: url(../assets/icon.png) center no-repeat;
 
   .b {
-    color: red;
+    color: blue;
   }
+}
+
+.example {
+  display: grid;
+  transition: all .5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black);
 }
