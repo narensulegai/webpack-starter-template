@@ -3,10 +3,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = () => {
   const isDev = process.env.NODE_ENV !== 'production';
@@ -35,7 +35,15 @@ module.exports = () => {
         },
       },
     },
-    // optimization: { minimizer: [new UglifyJsPlugin(), new OptimizeCSSAssetsPlugin()] },
+    optimization: {
+      minimizer: [
+        new TerserPlugin({
+          parallel: true,
+          terserOptions: { ecma: 6 },
+        }),
+        new OptimizeCSSAssetsPlugin(),
+      ],
+    },
     devtool: isDev ? 'inline-source-map' : false,
     plugins: [
       // new BundleAnalyzerPlugin({ analyzerPort: '9001' }),
