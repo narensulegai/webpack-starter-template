@@ -37,10 +37,7 @@ module.exports = () => {
     },
     optimization: {
       minimizer: [
-        new TerserPlugin({
-          parallel: true,
-          terserOptions: { ecma: 6 },
-        }),
+        new TerserPlugin({ parallel: true, terserOptions: { ecma: 6 } }),
         new OptimizeCSSAssetsPlugin(),
       ],
     },
@@ -56,6 +53,7 @@ module.exports = () => {
       }),
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
+        favicon: `${__dirname}/src/assets/icon.png`,
         template: `${__dirname}/src/index.html`,
         // The following code will include chunks in that particular order.
         chunks: ['vendor', 'app'],
