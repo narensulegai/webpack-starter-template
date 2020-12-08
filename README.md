@@ -1,2 +1,3 @@
 # webpack-starter-template
-Sample webpack template
+
+Bootstrap template to build web apps with vanilla JavaSacrip and node server
